@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Serban_Cristiana_ActivitatePOO2026/Serban_Cristiana_ActivitatePOO2026.vcxproj" />
+</Solution>
