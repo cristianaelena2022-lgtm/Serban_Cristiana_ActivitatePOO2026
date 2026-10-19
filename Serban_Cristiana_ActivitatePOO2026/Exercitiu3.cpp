@@ -16,19 +16,17 @@ class Produs {
         Produs(const Produs& p) : denumire(p.denumire), pret(p.pret), stoc(p.stoc) {
 
         }
+        void modif() {
+            stoc = 5;
+        }
 
 };
-
-void modif(Produs& p)
-{
-    p.stoc = 5;
-}
 
 int main()
 {
     Produs p1("Laptop", 3500, 10);
     Produs p2(p1);
-    modif(p2);
+    p2.modif();
     cout << "Produs 1: " << p1.denumire << " " << p1.pret << " " << p1.stoc << endl;
     cout << "Produs 2: " << p2.denumire << " " << p2.pret << " " << p2.stoc;
 }
