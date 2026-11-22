@@ -70,13 +70,15 @@ public:
 	}
 	Carte& operator=(const Carte& c) {
 		if (this != &c) {
+			if(this->titlu != nullptr)
+				delete[] this->titlu;
 			char* copieTitlu = new char[strlen(c.titlu) + 1];
 			strcpy(copieTitlu, c.titlu);
-			delete[] this->titlu;
 			this->titlu = copieTitlu;
+			if(this->autor != nullptr)
+				delete[] this->autor;
 			char* copieAutor = new char[strlen(c.autor) + 1];
 			strcpy(copieAutor, c.autor);
-			delete[] this->autor;
 			this->autor = copieAutor;
 			this->nrPagini = (c.nrPagini > 0) ? c.nrPagini : 0;
 			this->pret = (c.pret > 0) ? c.pret : 0;
@@ -166,9 +168,10 @@ public:
 	CarteDigitala& operator=(const CarteDigitala& cd) {
 		if (this != &cd) {
 			Carte::operator=(cd);
+			if(this->format != nullptr)
+				delete[] this->format;
 			char* copieFormat = new char[strlen(cd.format) + 1];
 			strcpy(copieFormat, cd.format);
-			delete[] this->format;
 			this->format = copieFormat;
 			this->dimensiuneMB = cd.dimensiuneMB;
 			this->areProtectie = cd.areProtectie;
